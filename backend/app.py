@@ -10,7 +10,7 @@ app = Flask(__name__)
 load_dotenv()
 
 # Load configuration based on the environment (development or production)
-app.config.from_object('config.DevelopmentConfig')  # Change to ProductionConfig for a production environment
+app.config.from_object('config.DevelopmentConfig')# Change to ProductionConfig for a production environment
 
  
 CORS(app, supports_credentials=True)

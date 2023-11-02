@@ -25,7 +25,7 @@ def register_user():
     if role not in ROLES.values():
         return jsonify({"error": "Invalid role"}), 400
     
-    # Check if the provided email or name already exists in the database
+    # Check if email/name already exists in database
     existing_user_by_email = Users.query.filter_by(email=email).first()
     existing_user_by_name = Users.query.filter_by(name=name).first()
 
@@ -37,10 +37,10 @@ def register_user():
     
     id = str(uuid.uuid4())
 
-    # Hash password using hashlib
+    # Hash password
     hashed_password = hashlib.sha256(plain_password.encode()).hexdigest()
 
-    # Create new user object with provided data
+    # new user object with provided data
     new_user = Users(id=id, name=name, email=email, password=hashed_password, role=role)
 
     db.session.add(new_user)
@@ -67,7 +67,7 @@ def login_user():
     # Retrieve user's role
     user_role = user.role
 
-    # Authentication successful
+    # Authentication success
     return jsonify({"message": "Authentication successful", "role": user_role}), 200
 
 
