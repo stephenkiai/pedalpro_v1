@@ -1,0 +1,100 @@
+/* ======================= Cards ====================== */
+
+.cardBox {
+    position: relative;
+    width: 90%;
+    padding: 80px;
+    margin-left: 250px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 20px;
+  }
+  
+  .cardBox .card1 {
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    height: 750px;
+    
+  }
+
+  .cardBox .card2 {
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    height: 750px;
+    
+  }
+  
+  .cardBox .card1 .welcome {
+    position: relative;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: var(--blue);
+  }
+
+  .cardBox .card1 .cardName {
+    color: var(--black2);
+    font-size: 1.1rem;
+    margin-top: 5px;
+  }
+  
+  
+  .cardBox .card1:hover {
+    background: var(--blue);
+  }
+  .cardBox .card1:hover .welcome,
+  .cardBox .card1:hover .cardName,
+  .cardBox .card1:hover .iconBx {
+    color: var(--white);
+  }
+
+  .cardBox .card2 .about {
+    position: relative;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: var(--blue);
+  }
+
+  .cardBox .card2 .cardName {
+    color: var(--black2);
+    font-size: 1.1rem;
+    margin-top: 5px;
+  }
+  
+  
+  .cardBox .card2:hover {
+    background: var(--blue);
+  }
+  
+  .cardBox .card2:hover .about,
+  .cardBox .card2:hover .cardName,
+  .cardBox .card2:hover .iconBx {
+    color: var(--white);
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+  
+  .italic {
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    .cardBox {
+      padding: 60px;
+      margin-left: 0;
+      grid-template-columns: 1fr;
+    }
+  }
