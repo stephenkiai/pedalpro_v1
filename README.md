@@ -14,3 +14,7 @@ Table of Contents
     Technologies Used
     Contributing
     License
+![Screenshot from 2023-11-02 22-31-26](https://github.com/stephenkiai/pedalpro_v1/assets/123061554/a43cab4a-b592-4fd2-b192-21ae5f1223df)
+![Screenshot from 2023-11-02 22-31-07](https://github.com/stephenkiai/pedalpro_v1/assets/123061554/837ea8a4-e86a-425c-a1f9-452201b3b193)
+![Screenshot from 2023-11-02 22-31-01](https://github.com/stephenkiai/pedalpro_v1/assets/123061554/b5339180-5bd2-4dc7-81e3-7a411a2787ab)
+
