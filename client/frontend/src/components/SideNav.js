@@ -33,16 +33,7 @@ const Sidebar = () => {
               <span className="icon">
               <FaUsers />
               </span>
-              <span className="title">Rides</span>
-            </Link>
-          </li>
-
-          <li>
-          <Link to="/messages">
-              <span className="icon">
-              <FaComment />
-              </span>
-              <span className="title">Messages</span>
+              <span className="title">Ride List</span>
             </Link>
           </li>
 
@@ -52,15 +43,6 @@ const Sidebar = () => {
               <FaQuestionCircle />
               </span>
               <span className="title">Live Ride</span>
-            </Link>
-          </li>
-
-          <li>
-          <Link to="/buddy">
-              <span className="icon">
-              <FaUsers />
-              </span>
-              <span className="title">Friends</span>
             </Link>
           </li>
 
@@ -88,6 +70,24 @@ const Sidebar = () => {
               <FaBicycle />
               </span>
               <span className="title">My Bike Profile</span>
+            </Link>
+          </li>
+
+          <li>
+          <Link to="/buddy">
+              <span className="icon">
+              <FaUsers />
+              </span>
+              <span className="title">Friends</span>
+            </Link>
+          </li>
+
+          <li>
+          <Link to="/messages">
+              <span className="icon">
+              <FaComment />
+              </span>
+              <span className="title">Messages</span>
             </Link>
           </li>
 

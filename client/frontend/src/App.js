@@ -8,7 +8,10 @@ import Home from './components/Home';
 import Messages from './components/Messages';
 import Buddy from './components/Buddy';
 import Market from './components/Market';
-import Activity from './components/Activity';
+import Activity from './components/RideList';
+import CreateRide from './components/CreateRide';
+import JoinRide from './components/JoinRide';
+import ViewRide from './components/ViewRide';
 
 
 function App() {
@@ -24,6 +27,10 @@ function App() {
         <Route path="/buddy" element={<Buddy />} />
         <Route path="/market" element={<Market />} />
         <Route path="/activity" element={<Activity />} />
+        <Route path="/createRide" element={<CreateRide />} />
+        <Route path="/joinRide" element={<JoinRide />} />
+        <Route path="/viewRide" element={<ViewRide />} />
+
         
         {/* <Route path="" element={<NotFound />} />*/}
         
