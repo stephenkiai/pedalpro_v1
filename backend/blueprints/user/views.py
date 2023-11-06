@@ -2,6 +2,8 @@ from flask import jsonify, request, Blueprint
 from models import db, Users, UserSchema
 from constants import ROLES
 import hashlib, uuid
+from flask_jwt_extended import create_access_token
+from datetime import timedelta
 
 
 
@@ -64,11 +66,14 @@ def login_user():
     if hashlib.sha256(plain_password.encode()).hexdigest() != user.password:
         return jsonify({"error": "Invalid password"}), 400
 
+    # Create an access token with the user's ID and role
+    access_token = create_access_token(identity=user.id, expires_delta=timedelta(hours=1))
+
     # Retrieve user's role
     user_role = user.role
 
     # Authentication success
-    return jsonify({"message": "Authentication successful", "role": user_role}), 200
+    return jsonify({"message": "Authentication successful", "role": user_role, "access_token": access_token}), 200
 
 
 @user_bp.route('/users', methods=['GET']) 
