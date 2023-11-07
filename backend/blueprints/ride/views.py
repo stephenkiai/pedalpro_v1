@@ -13,7 +13,7 @@ def create_ride():
     data = request.get_json()
 
     name = data.get('name')
-    location = data.get('location')
+    location = data get('location')
     distance = data.get('distance')
     start_datetime = data.get('start_datetime')
 
@@ -27,10 +27,11 @@ def create_ride():
             ride = Ride(id=ride_id, name=name, location=location, distance=distance, start_datetime=formatted_start_datetime)
             db.session.add(ride)
             db.session.commit()
-            return jsonify({"message": "Ride created successfully"}), 201
+            return jsonify({"message": "Ride created successfully", "ride_id": ride_id}), 201
         except ValueError:
             return jsonify({"error": "Invalid date format. Use DD/MM/YYYY HH:MM:SS format for start_datetime"}), 400
     return jsonify({"error": "Invalid ride data"}), 400
+
 
 
 @ride_bp.route('/all', methods=['GET'])
