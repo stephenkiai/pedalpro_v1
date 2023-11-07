@@ -1,0 +1,32 @@
+.view-ride-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.view-ride-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+.view-ride-heading {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.view-ride-details {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.view-ride-link {
+  text-decoration: none;
+  color: #165cf1;
+}

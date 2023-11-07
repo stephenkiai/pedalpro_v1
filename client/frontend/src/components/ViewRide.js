@@ -1,42 +1,55 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
-import { Container, Card, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom'; // Import useParams to access route parameters
+import "../assets/css/viewRide.css";
+import SideNav from "./SideNav.js";
 
-const ViewRide = ({ match }) => {
-  const [ride, setRide] = useState(null);
+
+const ViewRide = () => {
+  const { rideId } = useParams(); // Use useParams to access the route parameter
+
+  const [ride, setRide] = useState({});
 
   useEffect(() => {
-    // Fetch ride details by ID from the backend when the component mounts
-    const rideId = match.params.rideId;
+    // Fetch ride details based on the route parameter (rideId)
     axios.get(`http://localhost:5000/ride/view/${rideId}`)
       .then((response) => {
         setRide(response.data);
       })
       .catch((error) => {
-        // Handle errors, e.g., ride not found
+        // Handle errors
       });
-  }, [match.params.rideId]); // Dependency on rideId to fetch data when it changes
+  }, [rideId]);
 
   return (
-    <Container>
-      <h2>Ride Details</h2>
-      {ride ? (
-        <Card className="mb-3">
-          <Card.Body>
-            <Card.Title>{ride.name}</Card.Title>
-            <Card.Text>
-              <strong>Location:</strong> {ride.location}<br />
-              <strong>Distance:</strong> {ride.distance}<br />
-              <strong>Start Date and Time:</strong> {ride.start_datetime}
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      ) : (
-        <p>Ride details not found.</p>
-      )}
-      <Link to="/rides">Back to Ride List</Link>
+    <>
+    <SideNav />
+    <Container fluid className="view-ride-container">
+      <div className='view-ride-box'>
+      <Row>
+        <Col>
+          <h2 className="view-ride-heading">Ride Details</h2>
+          <div className="view-ride-details">
+            <strong>Name:</strong> {ride.name}
+          </div>
+          <div className="view-ride-details">
+            <strong>Location:</strong> {ride.location}
+          </div>
+          <div className="view-ride-details">
+            <strong>Distance:</strong> {ride.distance}
+          </div>
+          <div className="view-ride-details">
+            <strong>Start Date and Time:</strong> {ride.start_datetime}
+          </div>
+          <Link to="/rideList" className="view-ride-link">
+            Go back to RideList page? Click here
+          </Link>
+        </Col>
+      </Row>
+      </div>
     </Container>
+    </>
   );
 };
 

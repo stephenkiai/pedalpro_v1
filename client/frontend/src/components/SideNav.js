@@ -20,16 +20,16 @@ const Sidebar = () => {
           <h2 className="dashboard-text">Dashboard</h2>
 
           <li>
-          <Link to="/">
+          <Link to="/createRide">
               <span className="icon">
-              <FaHome />
+              <FaRoute />
               </span>
-              <span className="title">Home</span>
+              <span className="title">Create Ride</span>
             </Link>
           </li>
 
           <li>
-          <Link to="/activity">
+          <Link to="/rideList">
               <span className="icon">
               <FaUsers />
               </span>
@@ -56,16 +56,7 @@ const Sidebar = () => {
           </li>
 
           <li>
-          <Link to="/createRide">
-              <span className="icon">
-              <FaRoute />
-              </span>
-              <span className="title">Create Ride</span>
-            </Link>
-          </li>
-
-          <li>
-          <Link to="/messages">
+          <Link to="/myBike">
               <span className="icon">
               <FaBicycle />
               </span>
@@ -110,7 +101,7 @@ const Sidebar = () => {
           </li>
 
           <li>
-          <Link to="/">
+          <Link to="/login">
               <span className="icon">
               <FiLogOut />
               </span>

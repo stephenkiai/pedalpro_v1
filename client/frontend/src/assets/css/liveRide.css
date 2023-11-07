@@ -1,0 +1,23 @@
+
+.liveride-container {
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .liveride-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .liveride-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .liveride-content a {
+    text-decoration: none;
+    color: #0e0f10;
+  }

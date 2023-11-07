@@ -1,0 +1,23 @@
+
+.messages-container {
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .messages-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .messages-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .messages-content a {
+    text-decoration: none;
+    color: #121213;
+  }
+  

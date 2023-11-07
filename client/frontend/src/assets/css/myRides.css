@@ -1,0 +1,31 @@
+
+.myrides-container {
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .myrides-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .myrides-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .myride-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .myrides-message {
+    font-size: 18px;
+    color: #211e1e;
+    margin-bottom: 20px;
+  }
+  

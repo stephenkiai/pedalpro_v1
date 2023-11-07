@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom'; 
+import "../assets/css/createRide.css";
+import SideNav from "./SideNav.js";
 
 const CreateRide = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +12,8 @@ const CreateRide = () => {
     start_date: '', // Date input
     start_time: '', // Time input
   });
+
+  const history = useHistory();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,7 +33,7 @@ const CreateRide = () => {
       }
     }
   
-    // If the input is not in the expected format, return null or an error message
+    // If input is not the expected format, return null/error message
     return null;
   };
   
@@ -52,9 +57,12 @@ const CreateRide = () => {
           name: formData.name,
           location: formData.location,
           distance: formData.distance,
-          start_datetime: formattedStartDatetime, // Send combined date and time
+          start_datetime: formattedStartDatetime,
         });
         console.log(response.data.message);
+
+        history.push(`/ride/${response.data.ride_id}`);
+
       } catch (error) {
         console.error(error.response.data.error);
       }
@@ -66,60 +74,63 @@ const CreateRide = () => {
 
   return (
     <div>
-      <h2>Create a New Ride</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Name:</label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-          />
-        </div>
+      <SideNav />
+      <div className="form-container">
+        <h2>Create a New Ride</h2>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label>Name:</label>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+            />
+          </div>
 
-        <div>
-          <label>Location:</label>
-          <input
-            type="text"
-            name="location"
-            value={formData.location}
-            onChange={handleChange}
-          />
-        </div>
+          <div>
+            <label>Location:</label>
+            <input
+              type="text"
+              name="location"
+              value={formData.location}
+              onChange={handleChange}
+            />
+          </div>
 
-        <div>
-          <label>Distance:</label>
-          <input
-            type="text"
-            name="distance"
-            value={formData.distance}
-            onChange={handleChange}
-          />
-        </div>
+          <div>
+            <label>Distance:</label>
+            <input
+              type="text"
+              name="distance"
+              value={formData.distance}
+              onChange={handleChange}
+            />
+          </div>
 
-        <div>
-          <label>Start Date:</label>
-          <input
-            type="date"
-            name="start_date"
-            value={formData.start_date}
-            onChange={handleChange}
-          />
-        </div>
+          <div>
+            <label>Start Date:</label>
+            <input
+              type="date"
+              name="start_date"
+              value={formData.start_date}
+              onChange={handleChange}
+            />
+          </div>
 
-        <div>
-          <label>Start Time:</label>
-          <input
-            type="time"
-            name="start_time"
-            value={formData.start_time}
-            onChange={handleChange}
-          />
-        </div>
+          <div>
+            <label>Start Time:</label>
+            <input
+              type="time"
+              name="start_time"
+              value={formData.start_time}
+              onChange={handleChange}
+            />
+          </div>
 
-        <button type="submit">Create Ride</button>
-      </form>
+          <button type="submit" className="submit-button">Create Ride</button>
+        </form>
+      </div>
     </div>
   );
 };

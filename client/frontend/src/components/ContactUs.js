@@ -1,36 +1,44 @@
 import React from 'react';
-import { Container, Form, Button } from 'react-bootstrap';
-import '../assets/css/contactUs.css'
+import '../assets/css/contactUs.css';
+import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import SideNav from "./SideNav.js";
 
 const ContactUs = () => {
-    return (
-      <Container>
-        <h2>Contact Us</h2>
-        <Form>
-          <Form.Group controlId="name">
-            <Form.Label>Name</Form.Label>
-            <Form.Control type="text" placeholder="Your Name" />
-          </Form.Group>
-  
-          <Form.Group controlId="email">
-            <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="Your Email" />
-          </Form.Group>
-  
-          <Form.Group controlId="message">
-            <Form.Label>Message</Form.Label>
-            <Form.Control as="textarea" rows={4} placeholder="Your Message" />
-          </Form.Group>
-  
-          <Button variant="primary" type="submit" style={{ marginRight: '20px' }}>
-            Send Message
-          </Button>
-          <Link to="/">Go to Home page? Click here</Link>
-        </Form>
-      </Container>
-    );
-  };
-  
-  export default ContactUs;
-  
+  return (
+    <>
+    <SideNav />
+    <Container fluid className="contact-us-container">
+      <Row className="justify-content-center align-items-center h-100">
+        <Col xs={12} sm={8} md={6} lg={4}>
+          <div className="contact-us-content">
+            <h1>Contact The Developer..</h1>
+            <h3>Find My Other Works On These Links</h3>
+            <ul>
+              <li>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a href="https://www.x.com" target="_blank" rel="noopener noreferrer">
+                  X.com
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                  LinkedIn
+                </a>
+              </li>
+            </ul>
+            
+          </div>
+          <Link to="/dashboard">Go to Dashboard page? Click here</Link>
+        </Col>
+      </Row>
+    </Container>
+    </>
+  );
+};
+
+export default ContactUs;

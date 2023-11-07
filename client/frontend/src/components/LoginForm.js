@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from '../axiosConfig.js';
-import { Form, Button, Container } from 'react-bootstrap';
+import { Form, Button, Container, Row, Col} from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { showFlashMessage, flashMessage, flashMessageType } from '../assets/scripts/flashMessage.js';
 import '../assets/css/flashMessage.css'
@@ -31,10 +31,10 @@ const LoginForm = () => {
   };
 
   return (
-    <Container>
+    <>
       {flashMessage && <div className={flashMessageType}>{flashMessage}</div>}
-      <div className="login-container">
-        <div className="form-container">
+      <Row className="login-container">
+        <Col md={6} className="form-container">
           <h2>Login</h2>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="loginIdentifier">
@@ -61,11 +61,14 @@ const LoginForm = () => {
               Login
             </Button>
           </Form>
-          <Link to="/register" style={{ marginRight: '20px' }}>Don't have an account? Register here</Link>
-          <Link to="/">Go to Home page? Click here</Link>
-        </div>
-      </div>
-    </Container>
+
+          <div className="login-links">
+            <Link to="/register">Don't have an account? Register here</Link>
+            <Link to="/forgot-password">Forgot Password? Click here</Link>
+          </div>
+        </Col>
+      </Row>
+    </>
   );
 };
 

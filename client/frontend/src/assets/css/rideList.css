@@ -1,0 +1,37 @@
+/* RideList.css */
+
+.ride-list-outer-container {
+    width: 70%;
+    padding-left: 30%;
+  }
+
+  .ride-list-outer-container h1{
+    text-align: center;
+  }
+
+.ride-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-height: 700px; /* Set a maximum height for the container */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    padding-left: 10px;
+  }
+  
+  /* Individual ride cards */
+  .ride-card {
+    flex: 0 1 calc(30% - 20px);
+    margin: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Adjust card width for smaller screens */
+  @media (max-width: 768px) {
+    .ride-card {
+      flex: 0 1 calc(50% - 20px);
+    }
+  }
+  

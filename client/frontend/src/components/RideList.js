@@ -3,12 +3,14 @@ import axios from 'axios';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import JoinRide from './JoinRide';
+import "../assets/css/rideList.css"
+import SideNav from "./SideNav.js";
 
 const RideList = () => {
   const [rides, setRides] = useState([]);
 
   useEffect(() => {
-    // Fetch rides from the backend when the component mounts
+    // Fetch rides from the backend
     axios.get('http://localhost:5000/ride/all')
       .then((response) => {
         setRides(response.data);
@@ -16,27 +18,27 @@ const RideList = () => {
       .catch((error) => {
         // Handle errors
       });
-  }, []); // Empty dependency array to fetch data once when the component mounts
+  }, []);
 
   return (
-    <Container>
-      <h2>RideList</h2>
-      <Row>
+    <div>
+      <SideNav />
+    <div className="ride-list-outer-container">
+      <h1>RideList</h1>
+      <div className="ride-list-container">
         {rides.map((ride) => (
-          <Col key={ride.id} xs={12} sm={6} md={4} lg={3}>
-            <Card className="mb-3">
-              <Card.Body>
-                <Card.Title>{ride.name}</Card.Title>
-                <Card.Text>{ride.description}</Card.Text>
-                <JoinRide rideId={ride.id} />
-                <Link to={`/ride/${ride.id}`} className="btn btn-primary">View</Link>
-              </Card.Body>
-            </Card>
-          </Col>
+          <Card key={ride.id} className="ride-card">
+            <Card.Body>
+              <Card.Title>{ride.name}</Card.Title>
+              <Card.Text>{ride.description}</Card.Text>
+              <JoinRide rideId={ride.id} />
+              <Link to={`/ride/${ride.id}`} className="btn btn-primary">View</Link>
+            </Card.Body>
+          </Card>
         ))}
-      </Row>
-      <Link to="/">Go to Home page? Click here</Link>
-    </Container>
+      </div>
+    </div>
+    </div>
   );
 };
 

@@ -1,16 +1,29 @@
-import React from 'react'
+import React from 'react';
+import '../assets/css/buddy.css';
+import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import SideNav from "./SideNav.js";
 
 const Buddy = () => {
   return (
-    <div>
-      <p>
-        Here is a List of Your Cyclist Friends.<br />
-        List Loading...
-      </p>
-      <Link to="/">Go to Home page? Click here</Link>
-    </div>
-  )
-}
+    <>
+    <SideNav />
+    <Container fluid className="buddy-container">
+      <Row className="justify-content-center align-items-center h-100">
+        <Col xs={12} sm={8} md={6} lg={4}>
+          <div className="buddy-content">
+            <h1>Your Cyclist Friends.<br /></h1>
+            <p>
+             Friend List Loading...<br />
+             Cycling Friends are The Best!
+            </p>
+           
+          </div>
+        </Col>
+      </Row>
+    </Container>
+    </>
+  );
+};
 
-export default Buddy
+export default Buddy;

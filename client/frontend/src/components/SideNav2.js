@@ -50,14 +50,7 @@ const Sidebar = () => {
             </Link>
           </li>
 
-          <li>
-          <Link to="/contactUs">
-              <span className="icon">
-              <FaEnvelope />
-              </span>
-              <span className="title">Contact-Us</span>
-            </Link>
-          </li>
+          
 
         </ul>
       </div>
