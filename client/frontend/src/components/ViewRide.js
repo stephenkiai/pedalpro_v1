@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
-import { useParams, Link } from 'react-router-dom'; // Import useParams to access route parameters
+import { useParams, Link } from 'react-router-dom';
 import "../assets/css/viewRide.css";
 import SideNav from "./SideNav.js";
+import TopBar from "./TopBar.js";
 
 
 const ViewRide = () => {
-  const { rideId } = useParams(); // Use useParams to access the route parameter
+  const { rideId } = useParams();
 
   const [ride, setRide] = useState({});
 
@@ -24,6 +25,7 @@ const ViewRide = () => {
 
   return (
     <>
+    <TopBar />
     <SideNav />
     <Container fluid className="view-ride-container">
       <div className='view-ride-box'>

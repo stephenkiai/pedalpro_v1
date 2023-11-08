@@ -7,16 +7,21 @@
 
   .ride-list-outer-container h1{
     text-align: center;
+    padding: 60px;
   }
 
 .ride-list-container {
+    
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-height: 700px; /* Set a maximum height for the container */
-    overflow-y: scroll; /* Enable vertical scrolling */
+    max-height: 700px;
+    overflow-y: scroll;
     padding-left: 10px;
   }
+
+  .ride-list-container h1{
+    font-style: italic;  }
   
   /* Individual ride cards */
   .ride-card {

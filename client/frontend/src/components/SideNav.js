@@ -1,7 +1,6 @@
 import React from 'react';
-import { FaHome, FaUsers, FaComment, FaQuestionCircle,
-    FaStore, FaRoute, FaEnvelope, FaBicycle } from 'react-icons/fa';
-import { FiLogOut } from 'react-icons/fi';
+import { FaUsers, FaComment, FaQuestionCircle,
+    FaStore, FaRoute, FaBicycle } from 'react-icons/fa';
 import '../assets/css/sidenav.css'
 import { Link } from 'react-router-dom';
 
@@ -88,24 +87,6 @@ const Sidebar = () => {
               <FaStore />
               </span>
               <span className="title">Market</span>
-            </Link>
-          </li>
-
-          <li>
-          <Link to="/contactUs">
-              <span className="icon">
-              <FaEnvelope />
-              </span>
-              <span className="title">Contact Us</span>
-            </Link>
-          </li>
-
-          <li>
-          <Link to="/login">
-              <span className="icon">
-              <FiLogOut />
-              </span>
-              <span className="title">Log Out</span>
             </Link>
           </li>
 

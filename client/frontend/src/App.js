@@ -1,6 +1,6 @@
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+//import { UserProvider } from './components/UserContext';
 import Dashboard from './components/Dashboard';
 import RegisterForm from './components/RegisterForm';
 import LoginForm from './components/LoginForm';
@@ -16,11 +16,13 @@ import RideList from './components/RideList';
 import LiveRide from './components/LiveRide';
 import MyBike from './components/MyBike';
 import ContactUs from './components/ContactUs';
+import AboutUs from './components/AboutUs';
 
 
 
 function App() {
   return (
+    //<UserProvider>
     <Router>
       <Routes>
         <Route path="" element={<Home />} />
@@ -39,11 +41,13 @@ function App() {
         <Route path="/liveRide" element={<LiveRide />} />
         <Route path="/myBike" element={<MyBike />} />
         <Route path="/contactUs" element={<ContactUs />} />
+        <Route path="/aboutUs" element={<AboutUs />} />
 
         {/* <Route path="" element={<NotFound />} />*/}
         
       </Routes>
     </Router>
+    //</UserProvider>
   );
 }
 

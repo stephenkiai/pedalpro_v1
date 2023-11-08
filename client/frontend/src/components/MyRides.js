@@ -3,10 +3,12 @@ import '../assets/css/myRides.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import SideNav from "./SideNav.js";
+import TopBar from "./TopBar.js";
 
 const MyRides = () => {
   return (
     <div>
+      <TopBar />
       <SideNav />
     <Container fluid className="myrides-container">
       <Row className="justify-content-center align-items-center h-100">

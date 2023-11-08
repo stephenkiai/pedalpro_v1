@@ -4,13 +4,25 @@
     position: absolute;
     width: calc(100% - 300px);
     left: 300px;
-    min-height: 100vh;
+    
     background: var(--white);
     transition: 0.5s;
   }
   .main.active {
     width: calc(100% - 80px);
     left: 80px;
+  }
+
+  .topbar .links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .topbar .auth {
+    display: flex;
+    align-items: center;
+    gap: 20px;
   }
   
   .topbar {
@@ -20,6 +32,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
+    background-color: var(--black2);
   }
   
   .toggle {

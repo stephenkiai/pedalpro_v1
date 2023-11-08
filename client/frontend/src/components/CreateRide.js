@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 import "../assets/css/createRide.css";
-import SideNav from "./SideNav.js";
+import SideNav from "./SideNav.js"
+import TopBar from "./TopBar.js";
 
 const CreateRide = () => {
   const [formData, setFormData] = useState({
@@ -13,7 +14,8 @@ const CreateRide = () => {
     start_time: '', // Time input
   });
 
-  const history = useHistory();
+  const navigate = useNavigate();
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -43,8 +45,8 @@ const CreateRide = () => {
     // Format the date and time
     const formattedDate = new Date(formData.start_date).toLocaleDateString('en-US', {
       year: 'numeric',
-      month: '2-digit',
       day: '2-digit',
+      month: '2-digit',
     });
   
     const formattedTime = formatTime(formData.start_time);
@@ -59,10 +61,12 @@ const CreateRide = () => {
           distance: formData.distance,
           start_datetime: formattedStartDatetime,
         });
-        console.log(response.data.message);
-
-        history.push(`/ride/${response.data.ride_id}`);
-
+  
+        // use response ride ID to specify navigation
+        const rideId = response.data.ride_id;
+  
+        // Navigate to the view ride page with the ride ID
+        navigate(`/ride/${rideId}`);
       } catch (error) {
         console.error(error.response.data.error);
       }
@@ -71,10 +75,14 @@ const CreateRide = () => {
     }
   };
   
+  
+  
 
   return (
     <div>
+      <TopBar />
       <SideNav />
+      <div className='form-container-outer'>
       <div className="form-container">
         <h2>Create a New Ride</h2>
         <form onSubmit={handleSubmit}>
@@ -130,6 +138,7 @@ const CreateRide = () => {
 
           <button type="submit" className="submit-button">Create Ride</button>
         </form>
+      </div>
       </div>
     </div>
   );

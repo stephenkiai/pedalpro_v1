@@ -3,10 +3,12 @@ import '../assets/css/market.css';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import SideNav from "./SideNav.js";
+import TopBar from "./TopBar.js";
 
 const Market = () => {
   return (
     <>
+    <TopBar />
     <SideNav />
     <Container fluid className="market-container">
       <Row className="justify-content-center align-items-center h-100">
@@ -17,7 +19,7 @@ const Market = () => {
               Our Team is working to bring you a Cyclist <br />
               <strong>Ecommerce!</strong>
             </p>
-            <Link to="/dashboard" className="btn btn-primary">Go to Dashboard page? Click here</Link>
+            
           </div>
         </Col>
       </Row>

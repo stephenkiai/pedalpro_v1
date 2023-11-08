@@ -3,10 +3,12 @@ import '../assets/css/contactUs.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import SideNav from "./SideNav.js";
+import TopBar from "./TopBar.js";
 
 const ContactUs = () => {
   return (
     <>
+    <TopBar />
     <SideNav />
     <Container fluid className="contact-us-container">
       <Row className="justify-content-center align-items-center h-100">
@@ -33,7 +35,7 @@ const ContactUs = () => {
             </ul>
             
           </div>
-          <Link to="/dashboard">Go to Dashboard page? Click here</Link>
+          
         </Col>
       </Row>
     </Container>

@@ -64,7 +64,7 @@ const LoginForm = () => {
 
           <div className="login-links">
             <Link to="/register">Don't have an account? Register here</Link>
-            <Link to="/forgot-password">Forgot Password? Click here</Link>
+            <Link to="/">Go back to Home? Click here</Link>
           </div>
         </Col>
       </Row>

@@ -3,10 +3,12 @@ import '../assets/css/buddy.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import SideNav from "./SideNav.js";
+import TopBar from "./TopBar.js";
 
 const Buddy = () => {
   return (
     <>
+    <TopBar />
     <SideNav />
     <Container fluid className="buddy-container">
       <Row className="justify-content-center align-items-center h-100">

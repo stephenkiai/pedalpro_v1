@@ -1,8 +1,12 @@
 
+.form-container-outer {
+  padding: 50px;
+}
+
 .form-container {
     max-width: 400px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 50px;
     
   }
   
