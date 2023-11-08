@@ -6,11 +6,18 @@ from datetime import datetime
 ma = Marshmallow()
 db = SQLAlchemy()
 
-participants = db.Table(
-    'participants',
-    db.Column('user_id', db.String(36), db.ForeignKey('tblusers.id')),
-    db.Column('ride_id', db.String(36), db.ForeignKey('ride.id'))
-)
+class RideParticipants(db.Model):
+    __tablename__ = 'ride_participants'
+
+    ride_id = db.Column(db.String(36), db.ForeignKey('ride.id'), primary_key=True)
+    user_id = db.Column(db.String(36), db.ForeignKey('tblusers.id'), primary_key=True)
+    joined_at = db.Column(db.DateTime, default=datetime.utcnow)
+    confirmed = db.Column(db.Boolean, default=False)
+    comment = db.Column(db.String(255))
+
+    user = db.relationship('User', back_populates='rides')
+    ride = db.relationship('Ride', back_populates='participants')
+
 
 
 class Users(db.Model):
@@ -24,11 +31,7 @@ class Users(db.Model):
 
     profile = db.relationship('UserProfile', uselist=False, back_populates='user')
 
-    rides = db.relationship(
-        'Ride',
-        secondary=participants,
-        back_populates='participants'
-    )
+    rides = db.relationship('RideParticipants', back_populates='user')
 
     def __init__(self, id, name, email, password, role):
         self.id = id
@@ -60,17 +63,13 @@ class UserProfile(db.Model):
 class Ride(db.Model):
     __tablename__ = 'ride'
 
-    id = db.Column(db.String(36), primary_key=True)  # Specify the length for VARCHAR
+    id = db.Column(db.String(36), primary_key=True)
     name = db.Column(db.String(255))
     location = db.Column(db.String(255))
     distance = db.Column(db.String(50))
     start_datetime = db.Column(db.DateTime)
 
-    participants = db.relationship(
-        'Users',
-        secondary=participants,
-        back_populates='rides'
-    )
+    participants = db.relationship('RideParticipants', back_populates='ride')
 
     def __init__(self, id, name, location, distance, start_datetime):
         self.id = id
@@ -78,6 +77,8 @@ class Ride(db.Model):
         self.location = location
         self.distance = distance
         self.start_datetime = start_datetime
+
+    RideParticipants.user = db.relationship('Users', back_populates='rides')
 
 class UserSchema(ma.Schema):
     class Meta:
