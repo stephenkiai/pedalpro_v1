@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
+import axios from '../axiosConfig.js';
 import { useNavigate } from 'react-router-dom';
 import "../assets/css/createRide.css";
 import SideNav from "./SideNav.js"
@@ -55,7 +56,7 @@ const CreateRide = () => {
       const formattedStartDatetime = `${formattedDate} ${formattedTime}`;
   
       try {
-        const response = await axios.post('http://localhost:5000/ride/create', {
+        const response = await axios.post('/ride/create', {
           name: formData.name,
           location: formData.location,
           distance: formData.distance,
@@ -79,7 +80,7 @@ const CreateRide = () => {
   
 
   return (
-    <div>
+    <div className='cover_image'>
       <TopBar />
       <SideNav />
       <div className='form-container-outer'>

@@ -1,4 +1,11 @@
-/* RideList.css */
+.cover_image {
+  background-image: url('../images/banner2.jpg');
+    background-size: cover;
+    position: relative;
+    background-position-y: center;
+    height: 900px;
+    margin-bottom: 1rem;
+}
 
 .ride-list-outer-container {
     width: 70%;
@@ -8,6 +15,7 @@
   .ride-list-outer-container h1{
     text-align: center;
     padding: 60px;
+    color: var(--white);
   }
 
 .ride-list-container {
@@ -20,8 +28,10 @@
     padding-left: 10px;
   }
 
-  .ride-list-container h1{
-    font-style: italic;  }
+  .ride-list-container h1 {
+    font-style: italic;  
+  
+  }
   
   /* Individual ride cards */
   .ride-card {

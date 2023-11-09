@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
+import axios from '../axiosConfig.js';
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 //import { useUser } from './UserContext.js';
@@ -14,7 +15,7 @@ const RideList = () => {
 
   useEffect(() => {
     /*Fetch rides from the backend*/
-    axios.get('http://localhost:5000/ride/all')
+    axios.get('/ride/all')
       .then((response) => {
         setRides(response.data);/*retrieve user data from the context*/
       })
@@ -24,7 +25,7 @@ const RideList = () => {
   }, []);
 
   return (
-    <div>
+    <div className='cover_image'>
       <TopBar />
       <SideNav />
     <div className="ride-list-outer-container">

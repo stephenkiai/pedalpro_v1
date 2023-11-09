@@ -17,6 +17,7 @@ import LiveRide from './components/LiveRide';
 import MyBike from './components/MyBike';
 import ContactUs from './components/ContactUs';
 import AboutUs from './components/AboutUs';
+import Welcome from './components/Welcome';
 
 
 
@@ -42,6 +43,7 @@ function App() {
         <Route path="/myBike" element={<MyBike />} />
         <Route path="/contactUs" element={<ContactUs />} />
         <Route path="/aboutUs" element={<AboutUs />} />
+        <Route path="/welcome" element={<Welcome />} />
 
         {/* <Route path="" element={<NotFound />} />*/}
         

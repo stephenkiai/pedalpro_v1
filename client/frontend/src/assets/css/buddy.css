@@ -1,3 +1,11 @@
+.cover_image {
+  background-image: url('../images/banner2.jpg');
+    background-size: cover;
+    position: relative;
+    background-position-y: center;
+    height: 900px;
+    margin-bottom: 1rem;
+}
 
 .buddy-container {
     height: 100vh;

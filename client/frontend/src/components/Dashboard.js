@@ -1,6 +1,7 @@
 import React from 'react'
 import SideNav from './SideNav.js';
 import TopBar from './TopBar.js';
+import Welcome from './Welcome.js';
 
 
 const Dashboard = () => {
@@ -8,6 +9,7 @@ const Dashboard = () => {
     <div className='dashboard'>
         <TopBar />
         <SideNav />
+        <Welcome />
         
     </div>
   )

@@ -1,13 +1,13 @@
 import React from 'react';
 import '../assets/css/buddy.css';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import SideNav from "./SideNav.js";
 import TopBar from "./TopBar.js";
 
 const Buddy = () => {
   return (
-    <>
+    <div className='cover_image'>
     <TopBar />
     <SideNav />
     <Container fluid className="buddy-container">
@@ -24,7 +24,7 @@ const Buddy = () => {
         </Col>
       </Row>
     </Container>
-    </>
+    </div>
   );
 };
 

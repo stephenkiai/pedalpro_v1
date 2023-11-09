@@ -1,6 +1,10 @@
 import React from 'react';
 import '../assets/css/landingPage.css';
 import { Link } from 'react-router-dom';
+import feature_login from "../assets/images/feature_login.png"
+import feature_create_ride from "../assets/images/feature_create_ride.png"
+import feature_ridelist from "../assets/images/feature_ridelist.png"
+import feature_signup from "../assets/images/feature_signup.png"
 
 
 function LandingPage() {
@@ -29,7 +33,8 @@ function LandingPage() {
 
             <section id="features">
                 <div className="feature">
-                    <img src="../assets/images/feature_login.png" alt="Feature 1" />
+                    <img src={feature_login} alt="Feature 1" />
+                    <img src={feature_signup} alt="Feature 1" />
                     <h2>User Authentication</h2>
                     <br />
                     <br />
@@ -49,7 +54,8 @@ function LandingPage() {
                         connect with other cyclists, log their rides, and receive personalized recommendations.</p>
                 </div>
                 <div className="feature">
-                    <img src="feature2.jpg" alt="Feature 2" />
+                    <img src={feature_create_ride} alt="Feature 2" />
+                    <img src={feature_ridelist} alt="Feature 2" />
                     <h2>Ride</h2>
                     <p>
                         <span className='h3'>Create Ride</span><br />

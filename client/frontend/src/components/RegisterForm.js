@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from '../axiosConfig.js';
-import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import { Form, Button, Row, Col } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import '../assets/css/registerForm.css'
 import { showFlashMessage, flashMessage, flashMessageType } from '../assets/scripts/flashMessage.js';
@@ -17,7 +17,7 @@ const RegisterForm = () => {
 
     try {
       const response = await axios.post('/register', { name, email, password, role });
-      console.log('User registered successfully');
+      console.log(response);
       showFlashMessage('Success message', 'success');
 
       navigate('/login');

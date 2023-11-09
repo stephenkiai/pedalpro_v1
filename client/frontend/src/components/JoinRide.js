@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
+import axios from '../axiosConfig.js';
 
 const JoinRide = ({ rideId, userId }) => {
   const [message, setMessage] = useState('');
@@ -8,7 +9,7 @@ const JoinRide = ({ rideId, userId }) => {
     try {
       // Make an HTTP POST request to join the ride
       const response = await axios.post(
-        `http://localhost:5000/ride/join/${rideId}`,
+        `/ride/join/${rideId}`,
         { user_id: userId }, // Include the user_id in the request body
       );
 

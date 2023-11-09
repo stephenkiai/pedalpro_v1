@@ -1,7 +1,7 @@
 import React from 'react';
 import '../assets/css/liveRide.css';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import SideNav from "./SideNav.js";
 import TopBar from "./TopBar.js";
 
