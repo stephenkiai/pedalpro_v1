@@ -35,6 +35,7 @@ def create_ride():
 
 
 @ride_bp.route('/join/<string:ride_id>', methods=['POST'])
+#@jwt_required()
 def join_ride(ride_id):
     data = request.get_json()
     user_id = data.get('user_id')  # Get the user's ID
@@ -52,6 +53,7 @@ def join_ride(ride_id):
 
 
 @ride_bp.route('/all', methods=['GET'])
+#@jwt_required()
 def all_rides():
     # Retrieve all rides from the database
     rides = Ride.query.all()
@@ -67,6 +69,7 @@ def all_rides():
 
 
 @ride_bp.route('/view/<string:ride_id>', methods=['GET'])
+#@jwt_required()
 def get_ride_by_id(ride_id):
     # Retrieve the ride by its ID from the database
     ride = Ride.query.get(ride_id)
@@ -94,6 +97,7 @@ def get_ride_by_id(ride_id):
 
 
 @ride_bp.route('/view/<string:ride_id>/participants', methods=['GET'])
+#@jwt_required()
 def get_ride_participants(ride_id):
     # Query participants for the ride
     participants = RideParticipants.query.filter_by(ride_id=ride_id).all()
@@ -117,6 +121,7 @@ def get_ride_participants(ride_id):
 
 
 @ride_bp.route('/delete/<string:ride_id>', methods=['DELETE'])
+#@jwt_required()
 def delete_ride(ride_id):
     # Retrieve ride by its ID from database
     ride = Ride.query.get(ride_id)

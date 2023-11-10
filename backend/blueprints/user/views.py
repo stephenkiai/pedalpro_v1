@@ -1,5 +1,6 @@
 from flask import jsonify, request, Blueprint
 from models import db, Users, UserSchema
+from flask_jwt_extended import jwt_required, get_jwt_identity
 from constants import ROLES
 import hashlib, uuid
 from flask_jwt_extended import create_access_token
@@ -73,7 +74,28 @@ def login_user():
     user_role = user.role
 
     # Authentication success
-    return jsonify({"message": "Authentication successful", "role": user_role, "access_token": access_token}), 200
+    return jsonify({"message": "Authentication successful", "access_token": access_token}), 200
+
+
+# Endpoint to get user data
+@user_bp.route('/user-data', methods=['GET'])
+@jwt_required()
+def get_user_data():
+    # Get user's ID from the JWT token
+    user_id = get_jwt_identity()
+
+
+    user = Users.query.get(user_id)
+
+    if user:
+        # Return user data
+        user_data = {
+            "userid": user.id,
+            "role": user.role
+        }
+        return jsonify(user_data), 200
+    else:
+        return jsonify({"error": "User not found"}), 404
 
 
 @user_bp.route('/users', methods=['GET']) 

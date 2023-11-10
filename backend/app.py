@@ -9,8 +9,9 @@ app = Flask(__name__)
 
 #load environment variables
 load_dotenv()
-# Load configuration based on the environment (development or production)
-app.config.from_object('config.DevelopmentConfig')# Change to ProductionConfig for a production environment
+ # Load configuration based on the environment (development or production)
+ # #Change to ProductionConfig/DevelopmentConfig
+app.config.from_object('config.ProductionConfig')
 
 CORS(app, supports_credentials=True)
 db.init_app(app)   
@@ -33,4 +34,4 @@ app.register_blueprint(ride_bp)
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
